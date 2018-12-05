@@ -23,7 +23,10 @@ public class Room {
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 	}
-
+	public String toString()
+	{
+		return ("O");
+	}
 	/**
 	 * Removes the player from the room.
 	 * @param x

@@ -1,5 +1,6 @@
 package Game;
 
+import Board.Board;
 import People.Person;
 import Rooms.KoolRoom;
 import Rooms.Room;
@@ -34,12 +35,15 @@ public class Runner {
 		y = (int)(Math.random()*building.length);
 		building[x][y] = new KoolRoom(x, y);
 
+		Board Board = new Board(building);
+
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
+			Board.print();
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
 			if(validMove(move, player1, building))
